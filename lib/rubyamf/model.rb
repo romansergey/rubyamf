@@ -187,7 +187,7 @@ module RubyAMF
         options[:include] = include_associations
       end
 
-      File.open(Rails.root.join("log/HashDump#{(Time.now.to_f*1000).to_i}"), "wb") {|f| Marshal.dump(hash, f)}
+      File.open("/tmp/Hash#{(Time.now.to_f*1000).to_i}.dump", "wb") {|f| Marshal.dump(hash, f)}
 
       hash
     end
